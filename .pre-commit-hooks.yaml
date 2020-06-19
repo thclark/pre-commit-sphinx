@@ -4,3 +4,8 @@
     require_serial: true # Serial execution so that other routines that alter docs (e.g. formatting in python code samples) don't conflict.
     language: python
     entry: build-docs
+-   id: convert-bibliography
+    name: Convert Bibliography
+    description: This pre-commit hook converts a BibTeX .bib file to a .rst citations file.
+    language: python
+    entry: convert-bibliography

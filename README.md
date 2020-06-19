@@ -18,3 +18,25 @@ Use in your `.pre-commit-config.yaml` file like:
         language_version: python3
 ```
 
+
+## convert_bibliography
+
+NOT IMPLEMENTED YET
+
+If you have a bibliography (or citations, references, whatever you want to call them) in BibTeX format, and wish to use them in `.rst` documentation
+you'll need to translate them in order to use those references in `rst` docs.
+
+It's more convenient to maintain a bibtex file than a .rst citations file, because most reference managers can use and/or export bibtex.
+
+This updates a `rst` based citations file any time a bibliography file changes.
+
+You may wish to invoke this prior to the `build-docs` hook if you're also using that! 
+Use in your `.pre-commit-config.yaml` file like:
+```yaml
+  - repo: https://github.com/thclark/pre-commit-sphinx
+    rev: 0.0.1
+    hooks:
+      - id: convert-bibliography
+        args: ['--input-file', 'docs/source/bibliography.bib', '--output-file', 'docs/source/bibliography.rst']
+        language_version: python3
+```
